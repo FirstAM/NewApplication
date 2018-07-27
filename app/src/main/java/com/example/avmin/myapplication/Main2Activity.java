@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
 
+    TextView res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +18,24 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
         Button goback = (Button) findViewById(R.id.goBack);
         goback.setOnClickListener(this);
+
+        Intent intent = getIntent();
+        Float value1 = intent.getFloatExtra("num1");
+        Float value2 = intent.getFloatExtra("num2");
+        res = (TextView) findViewById(R.id.textView);;
+
+        value1 = num1;
+        value2 = num2;
+
+
+
+        result = value1 + value2;
+
+
+        res.setText(res);
+
+
+
     }
 
     @Override

@@ -13,10 +13,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btn;
     Button calc;
-    TextView res;
+
     EditText value1;
     EditText value2;
-
 
 
 
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         value1 = (EditText) findViewById(R.id.editText1);
         value2 = (EditText) findViewById(R.id.editText2);
 
-        res = (TextView) findViewById(R.id.textView);
+
 
 // Обработчик для кнопок
         btn.setOnClickListener(this);
@@ -44,24 +43,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      @SuppressLint("SetTextI18n")
      @Override
       public void onClick(View v) {
-           float num1 = 0;
-           float num2 = 0;
-           float result = 0;
+         float num1 = 0;
+         float num2 = 0;
+         float result = 0;
 
            num1 = Float.parseFloat(value1.getText().toString());
            num2 = Float.parseFloat(value2.getText().toString());
 
+
            switch (v.getId()){
-                case R.id.button1:
+                case R.id.button2:
                 Intent intent = new Intent(this, Main2Activity.class);
+
+                intent.putExtra("Num1", num1);
+                intent.putExtra("Num2", num2);
                 startActivity(intent);
 
-                case R.id.button2:
-                    result = num1 + num2;
+                case R.id.button1:
+
 
                 }
 
-         res.setText(num1 + " + " + num2 + " = " + result );
+         //res.setText(num1 + " + " + num2 + " = " + result );
 
            }
 
