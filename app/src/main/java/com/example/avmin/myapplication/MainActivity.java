@@ -47,16 +47,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          float num2 = 0;
          float result = 0;
 
+
+         // перевод полученных значений в флоат
+
            num1 = Float.parseFloat(value1.getText().toString());
            num2 = Float.parseFloat(value2.getText().toString());
 
 
            switch (v.getId()){
                 case R.id.button2:
+                    // метод  перехода на другое окно
                 Intent intent = new Intent(this, Main2Activity.class);
 
+         // отправляет значения из первого окна PutExtra Метод для отправки
                 intent.putExtra("Num1", num1);
                 intent.putExtra("Num2", num2);
+
+                // намерение перехода на другое окно
                 startActivity(intent);
 
                 case R.id.button1:

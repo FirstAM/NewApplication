@@ -19,6 +19,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         Button goback = (Button) findViewById(R.id.goBack);
         goback.setOnClickListener(this);
 
+        // принимает значения из первого окна PutExtra Метод для приема
         Intent intent = getIntent();
         Float value1 = intent.getFloatExtra("num1");
         Float value2 = intent.getFloatExtra("num2");
@@ -38,6 +39,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    // переход обратно на первое окно
     @Override
     public void onClick(View view) {
           switch (view.getId()){
