@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btn;
     Button calc;
 
     EditText value1;
@@ -25,16 +24,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 // находим элементы экрана
-        btn = (Button) findViewById(R.id.button1);
         calc = (Button) findViewById(R.id.button2);
-
         value1 = (EditText) findViewById(R.id.editText1);
         value2 = (EditText) findViewById(R.id.editText2);
 
 
 
 // Обработчик для кнопок
-        btn.setOnClickListener(this);
         calc.setOnClickListener(this);
 
      }
@@ -43,35 +39,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      @SuppressLint("SetTextI18n")
      @Override
       public void onClick(View v) {
-         float num1 = 0;
-         float num2 = 0;
-         float result = 0;
 
-
-         // перевод полученных значений в флоат
-
-           num1 = Float.parseFloat(value1.getText().toString());
-           num2 = Float.parseFloat(value2.getText().toString());
-
+        int num1 = Integer.parseInt(value1.getText().toString());
+        int num2 = Integer.parseInt(value2.getText().toString());
 
            switch (v.getId()){
                 case R.id.button2:
                     // метод  перехода на другое окно
                 Intent intent = new Intent(this, Main2Activity.class);
 
-         // отправляет значения из первого окна PutExtra Метод для отправки
+              // отправляет значения из первого окна PutExtra Метод для отправки
                 intent.putExtra("Num1", num1);
                 intent.putExtra("Num2", num2);
 
                 // намерение перехода на другое окно
                 startActivity(intent);
 
-                case R.id.button1:
-
-
                 }
 
-         //res.setText(num1 + " + " + num2 + " = " + result );
+
 
            }
 

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static java.lang.Integer.parseInt;
+
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
 
     TextView res;
@@ -19,22 +21,20 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         Button goback = (Button) findViewById(R.id.goBack);
         goback.setOnClickListener(this);
 
-        // принимает значения из первого окна PutExtra Метод для приема
+        // принимает значения из первого окна PutExtra Метод для прием мало вероятно
+
+        Bundle arguments = getIntent().getExtras();
+
         Intent intent = getIntent();
-        Float value1 = intent.getFloatExtra("num1");
-        Float value2 = intent.getFloatExtra("num2");
-        res = (TextView) findViewById(R.id.textView);;
-
-        value1 = num1;
-        value2 = num2;
+        assert arguments != null;
+        int value1 = arguments.getInt("Num1");
+        int value2 = arguments.getInt("Num2");
+        res = (TextView) findViewById(R.id.textView);
 
 
+        int result = value1 + value2;
 
-        result = value1 + value2;
-
-
-        res.setText(res);
-
+        res.setText(String.valueOf(result));
 
 
     }
