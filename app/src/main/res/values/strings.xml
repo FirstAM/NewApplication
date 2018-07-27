@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="button1">Посчитать</string>
+    <string name="button2">Кнопка2</string>
+    <string name="num1">Число1</string>
+    <string name="num2">Число2</string>
+    <string name="Res">Резултат</string>
+</resources>
